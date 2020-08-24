@@ -5,9 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title></title>
+    <script type="text/javascript">
+        $(function () {
+            $("#accident").click(function () {
+                console.log("accident event")
+                window.parent.postMessage(JSON.stringify({
+                    event_code: 'ym-client-event', data: JSON.stringify({
+                        event: {
+                            code: "notification",
+                            data: {
+                                type : "accident"
+                            }
+                        }
+                    })
+                }), '*');
+            })
+            $("#illness").click(function () {
+                console.log("illness event")
+                window.parent.postMessage(JSON.stringify({
+                    event_code: 'ym-client-event', data: JSON.stringify({
+                        event: {
+                            code: "notification",
+                            data: {
+                                type : "illness"
+                            }
+                        }
+                    })
+                }), '*');
+            })
+            $("#death").click(function () {
+                window.parent.postMessage(JSON.stringify({
+                    event_code: 'ym-client-event', data: JSON.stringify({
+                        event: {
+                            code: "notification",
+                            data: {
+                                type : "death"
+                            }
+                        }
+                    })
+                }), '*');
+            })
+        })
+    </script>
 </head>
 
 <body>
@@ -16,7 +59,8 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Accident</h5>
-                    <p class="card-text">I got into an accident.</p>
+                    <button id="accident" type="accident">accident.</button>
+                    <!-- <p class="card-text">I got into an accident.</p> -->
                     <br>
                     <br>
                     <br>
@@ -28,7 +72,8 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Illness</h5>
-                    <p class="card-text">I'm sick and I need assistance</p>
+                    <button id="illness" type="illness">Illness</button>
+                    <!-- <p class="card-text">I'm sick and I need assistance</p> -->
                     <br>
                     <br>
                     <br>
@@ -40,7 +85,8 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Death</h5>
-                    <p class="card-text">Someone I know has dies and I am the benificiary</p>
+                    <button id="death" type="death">Death</button>
+                    <!-- <p class="card-text">Someone I know has dies and I am the benificiary</p> -->
                     <br>
                     <br>
                     <br>
