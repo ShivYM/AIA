@@ -24,31 +24,31 @@
                     })
                 }), '*');
             })
-            $("#illness").click(function () {
-                console.log("illness event")
-                window.parent.postMessage(JSON.stringify({
-                    event_code: 'ym-client-event', data: JSON.stringify({
-                        event: {
-                            code: "notification",
-                            data: {
-                                type : "illness"
-                            }
-                        }
-                    })
-                }), '*');
-            })
-            $("#death").click(function () {
-                window.parent.postMessage(JSON.stringify({
-                    event_code: 'ym-client-event', data: JSON.stringify({
-                        event: {
-                            code: "notification",
-                            data: {
-                                type : "death"
-                            }
-                        }
-                    })
-                }), '*');
-            })
+            // $("#illness").click(function () {
+            //     console.log("illness event")
+            //     window.parent.postMessage(JSON.stringify({
+            //         event_code: 'ym-client-event', data: JSON.stringify({
+            //             event: {
+            //                 code: "notification",
+            //                 data: {
+            //                     type : "illness"
+            //                 }
+            //             }
+            //         })
+            //     }), '*');
+            // })
+            // $("#death").click(function () {
+            //     window.parent.postMessage(JSON.stringify({
+            //         event_code: 'ym-client-event', data: JSON.stringify({
+            //             event: {
+            //                 code: "notification",
+            //                 data: {
+            //                     type : "death"
+            //                 }
+            //             }
+            //         })
+            //     }), '*');
+            // })
         })
     </script>
 </head>
